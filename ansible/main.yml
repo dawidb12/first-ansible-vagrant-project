@@ -1,0 +1,20 @@
+---
+- hosts: webservers
+  gather_facts: yes
+  become: yes
+  roles:
+    - role: install_packages_webs
+
+- hosts: database
+  gather_facts: yes
+  become: yes
+  roles:
+    - install_packages_db
+    - ansible-role-mysql
+    - create_wp_database
+
+- hosts: webservers
+  gather_facts: yes
+  become: yes
+  roles:
+    - role: wordpress-lamp_ubuntu1804

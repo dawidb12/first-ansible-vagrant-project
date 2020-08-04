@@ -1,0 +1,21 @@
+---
+- name: Create a new database with name 'wordpress'
+  mysql_db:
+    name: wordpress
+    state: present
+- name: Create local database user with all database privileges
+  mysql_user:
+    name: wpuser
+    host: localhost
+    password: password
+    priv: '*.*:ALL,GRANT'
+    state: present
+- name: Create remote database user with all database privileges
+  mysql_user:
+    name: remotewpuser
+    host: 192.168.33.10
+    password: password
+    priv: '*.*:ALL,GRANT'
+    state: present
+- name: Flush Privileges
+  shell: mysql -u root -e 'FLUSH PRIVILEGES'

@@ -1,0 +1,5 @@
+[webservers]
+vagrant1 ansible_user=vagrant
+
+[database]
+vagrant2 ansible_user=vagrant

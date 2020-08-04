@@ -1,0 +1,21 @@
+---
+- name: Install the latest version of apache.
+  apt:
+    name: apache2
+    state: latest
+- name: Install the latest version of mysql-client.
+  apt:
+    name: mysql-client
+    state: latest
+- name: Install the latest version of PHP.
+  apt:
+    name: php
+    state: latest
+- name: Install the latest version of libapache2-mod-php.
+  apt:
+    name: libapache2-mod-php
+    state: latest
+- name: Install the latest version of php-mysql.
+  apt:
+    name: php-mysql
+    state: latest

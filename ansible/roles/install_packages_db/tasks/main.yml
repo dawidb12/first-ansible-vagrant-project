@@ -1,0 +1,5 @@
+---
+- name: Install python-mysqldb
+  apt:
+    name: python-mysqldb
+    state: latest
